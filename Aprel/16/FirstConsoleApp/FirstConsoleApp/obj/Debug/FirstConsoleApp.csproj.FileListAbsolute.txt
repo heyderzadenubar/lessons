@@ -1,0 +1,7 @@
+C:\Users\heyde_000\Desktop\lessons\aprel\16\FirstConsoleApp\FirstConsoleApp\obj\Debug\FirstConsoleApp.csprojAssemblyReference.cache
+C:\Users\heyde_000\Desktop\lessons\aprel\16\FirstConsoleApp\FirstConsoleApp\obj\Debug\FirstConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\heyde_000\Desktop\lessons\aprel\16\FirstConsoleApp\FirstConsoleApp\bin\Debug\FirstConsoleApp.exe.config
+C:\Users\heyde_000\Desktop\lessons\aprel\16\FirstConsoleApp\FirstConsoleApp\bin\Debug\FirstConsoleApp.exe
+C:\Users\heyde_000\Desktop\lessons\aprel\16\FirstConsoleApp\FirstConsoleApp\bin\Debug\FirstConsoleApp.pdb
+C:\Users\heyde_000\Desktop\lessons\aprel\16\FirstConsoleApp\FirstConsoleApp\obj\Debug\FirstConsoleApp.exe
+C:\Users\heyde_000\Desktop\lessons\aprel\16\FirstConsoleApp\FirstConsoleApp\obj\Debug\FirstConsoleApp.pdb
