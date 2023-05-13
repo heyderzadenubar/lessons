@@ -21,6 +21,7 @@ namespace HomeWork1
             string soyad = Console.ReadLine();
             Console.Write("Şəhər: ");
             string seher = Console.ReadLine();
+            Console.ReadLine();
 
 
         }
