@@ -19,18 +19,20 @@ namespace HomeWork2
              Gəncə
              Sumqayıt
              */
-            Console.WriteLine(" 10 seher adı daxil edin:");
+            Console.WriteLine(" Enter 10 city names:");
             Console.WriteLine();
-            var city1 = "Baki";
-            var city2 ="Gence";
-            var city3 = "Lenkeran";
-            var city4 = "Sumqayit";
-            var city5 = "Ismayilli";
-            var city6 = "Agdas";
-            var city7 = "Kurdemir";
-            var city8 = "Fuzuli";
-            var city9 = "Zengilan";
-            var city10 = "Xocali";
+            var city1 = Console.ReadLine();
+            var city2 = Console.ReadLine();
+            var city3 = Console.ReadLine();
+            var city4 = Console.ReadLine();
+            var city5 = Console.ReadLine();
+            var city6 = Console.ReadLine();
+            var city7 = Console.ReadLine();
+            var city8 = Console.ReadLine();
+            var city9 = Console.ReadLine();
+            var city10 = Console.ReadLine();
+            Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine(" 1. " + city1);
             Console.WriteLine(" 2. " + city2);
             Console.WriteLine(" 3. " + city3);

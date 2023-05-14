@@ -14,14 +14,24 @@ namespace HomeWork1
              Homework 1:
              İstifadəçidən adını, soyadını, yaşadığı şəhəri soruşun və bunları dəyişənlərdə saxlayın.
              */
-
-            Console.Write("Adınız: ");
-            string ad = Console.ReadLine();
-            Console.Write("Soyadınız: ");
-            string soyad = Console.ReadLine();
-            Console.Write("Şəhər: ");
-            string seher = Console.ReadLine();
+            Console.Write("Name: ");
+            string name = Console.ReadLine();
+            Console.Write("Surname: ");
+            string surname = Console.ReadLine();
+            Console.Write("City: ");
+            string city = Console.ReadLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("User data:");
+            Console.WriteLine();
+            Console.WriteLine("Name: " + name);
+            Console.WriteLine("Surname: " + surname);
+            Console.WriteLine("City: " + city);
             Console.ReadLine();
+
+
+
+
 
 
         }
