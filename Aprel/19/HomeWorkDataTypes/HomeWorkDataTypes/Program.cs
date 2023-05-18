@@ -10,11 +10,42 @@ namespace HomeWorkDataTypes
     {
         static void Main(string[] args)
         {
-            #region DataTypesExamples:
+            #region DataTypesExamples(Homework1&4):
 
             /*   Ev tapşırığı olaraq ilk növbədə ən az 2-3 saat internetdə "C# data types" (C# veri tipleri) mövzusunu geniş bir şəkildə araşdırırsınız.
              Araşdıra-araşdıra da bir Console App açıb araşdırdığınız data tiplərindən nümunələr yazırsınız. Hər data type üçün ən az 5 fərqli nümunə yazın.*/
-           
+            /* Araşdırdığınız dəyişən tipləri barədə bir yazı hazırlayacaqsız.Hər bir data type'ın nə kimi bir dəyər aldığını, neçə bit olduğunu və s. araşdırın.
+                Qeyd: mövzuları araşdırarkən bir saytdan və ya qaynaqdan araşdırmayın.Fərqli - fərqli qaynaqlara baxın. */
+            
+            //DateTime
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine(DateTime.Now);
+            Console.WriteLine();
+            DateTime dt;
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("DateTime ");
+            Console.ResetColor();
+            Console.WriteLine("data type:");
+            Console.WriteLine("Min. value: " + DateTime.MinValue);
+            Console.WriteLine("Max. value: " + DateTime.MaxValue);
+            Console.Write("Enter date: ");
+            string dateString = Console.ReadLine();
+            var parseDate = DateTime.TryParse(dateString, out dt);
+            if (parseDate)
+            {
+                Console.WriteLine(dt);
+            }
+            else
+            {
+                Console.WriteLine($"{dateString} is not valid date");
+            }
+            TimeSpan ts = new TimeSpan(10, 0, 0, 0);
+            Console.WriteLine("10 days after: " + (dt + ts));
+            DateTime dt2 = new DateTime(2023, 07, 26);
+            TimeSpan ts2 = dt2.Subtract(dt);
+            Console.WriteLine("Subtract dates (" + dt2 + "): " + ts2);
+            Console.WriteLine();
+
             //byte -- 1byte
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("byte ");
@@ -58,7 +89,7 @@ namespace HomeWorkDataTypes
             Console.WriteLine("Min. value: " + int.MinValue);
             Console.WriteLine("Max. value: " + int.MaxValue);
             Console.WriteLine();
-            
+
             //uint -- 4byte
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("uint ");
@@ -105,7 +136,7 @@ namespace HomeWorkDataTypes
             Console.WriteLine("Min. value: " + float.MinValue);
             Console.WriteLine("Max. value: " + float.MaxValue);
             Console.WriteLine();
-            
+
             //double -- 8byte
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("double ");
@@ -160,40 +191,54 @@ namespace HomeWorkDataTypes
             string Metar = "UBBB 170700Z 35020KT 9999 FEW060CB 17/11 Q1015 NOSIG";
             Console.WriteLine(Metar);
             Console.WriteLine("Decoder:");
-            Console.WriteLine("ICAO code: "+ Metar.Substring(0,4));           //substring
+            Console.WriteLine("ICAO code: " + Metar.Substring(0, 4));           //substring
             Console.WriteLine("Date&Time: " + Metar.Substring(5, 7));
             Console.WriteLine("Wind: " + Metar.Substring(13, 7));
-            Console.WriteLine("ToLower: "+Metar.ToLower());
-            Console.WriteLine("Length: "+Metar.Length);
+            Console.WriteLine("ToLower: " + Metar.ToLower());
+            Console.WriteLine("Length: " + Metar.Length);
 
 
             #endregion
 
-            #region Homework 2:
+            #region Homework 2:    
+
             /* "C# variable naming convention"(C# değişken isimlendirme kuralları) mövzusunu araşdırırsınız. Araşdırmanızın nəticəsi olaraq, araşdırdığınız
              adlandırma qaydalarından yola çıxaraq dəyişən adları yazın.*/
+             
+            int newVariable;               //camelCase (local variable & parameteres) #Homework2Continuation
 
             #endregion
 
             #region Homework 3:
-
-
-
-            string s = "Decimal values";
-            decimal sdecimal = decimal.Parse( Console.ReadLine());
-            decimal sDecimal = decimal.Parse(Console.ReadLine());
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("                 HOMEWORK2");
+            Console.ResetColor();
+            string sString="5" ;
+            bool sBool=true;
             char sChar = 's';
-            Console.Write(s+" "+sChar+" "+ sdecimal/sDecimal);
+            long sLong = 5;
+            var sVarString = sString;
+            var sVarBool = sBool;
+            var sVarChar = sChar;
+            var sVarLong = sLong;
+            Console.WriteLine("SvarString  " + sString);
+            Console.WriteLine("SvarBool  " + sBool);
+            Console.WriteLine("SvarChar  " + sChar);
+            Console.WriteLine("SvarLong  " + sLong);
             Console.Read();
+            
             /* int, bool, char, string və long tipində dəyişənlər yaradıb onlara dəyər verirsiniz.Sonra elə bir dəyişən yaratmalısınız ki, bütün bu dəyişənləri
               ona dəyər olaraq mənimsədə biləsiniz.  */
             #endregion
-
-            #region  Homework 4:
-            /* Araşdırdığınız dəyişən tipləri barədə bir yazı hazırlayacaqsız.Hər bir data type'ın nə kimi bir dəyər aldığını, neçə bit olduğunu və s. araşdırın.
-                 Qeyd: mövzuları araşdırarkən bir saytdan və ya qaynaqdan araşdırmayın.Fərqli - fərqli qaynaqlara baxın. */
-            #endregion
-
+            
         }
+
+        #region Homework2Continuation
+        static void FoodMenu(string aString)        //PascalCase --- class,methods,interface ...
+        {
+            Console.WriteLine(aString);
+        }
+         private int _aInt = 5;     //_underScore
+        #endregion
     }
 }
