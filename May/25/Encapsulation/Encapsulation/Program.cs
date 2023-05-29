@@ -27,24 +27,18 @@ namespace Encapsulation
              student2.Name = "Orkhan"; //(email burada orkhan.farajov@gmail.com olaraq set olunur)*/
             #endregion
 
-            //Student student = new Student();
-            //student.Ad = "Nubar";
-            //student.Soyad = "Heyderzade";
-            //Console.WriteLine("");
-            //student.Email(student.Ad,student.Soyad);
-            //Console.Read();
-
-            Student studentSurname = new Student();
-            studentSurname.Ad = "Nubar";
-            studentSurname.Soyad = "Heyderzade";
+            Student student = new Student();
+            student.Ad = "Nubar";
+            student.Soyad = "Heyderzade";
             Console.WriteLine("");
-            studentSurname.Email(studentSurname.Ad, studentSurname.Soyad);
             Console.Read();
 
 
-
-
-
+            Student student2 = new Student();
+            student.Soyad = "Heyderzade";
+            student.Ad = "Nubar";
+            Console.WriteLine("");
+            Console.Read();
         }
     }
 }

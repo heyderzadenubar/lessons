@@ -8,19 +8,23 @@ namespace Encapsulation
 {
     class Student
     {
-        private string ad;
-        private string soyad;
-        private string email;
+        private string _ad;
+        private string _soyad;
+        private string _email;
 
         public string Ad
         {
             set
             {
-                this.ad = value;
+                this._ad = value;
+                if(this._soyad != null)
+                {
+                    this._email = string.Format(_ad.ToLower() + "." + _soyad.ToLower() + "@gmail.com");
+                }
             }
             get
             {
-                return this.ad;   
+                return this._ad;   
             }
         }
 
@@ -28,20 +32,16 @@ namespace Encapsulation
         {
             set
             {
-                this.soyad = value;
+                this._soyad = value;
+                if (this._ad != null)
+                {
+                    this._email = string.Format(_ad.ToLower() + "." + _soyad.ToLower() + "@gmail.com");
+                }
             }
             get
             {
-                return this.soyad;                                       
+                return this._soyad;                                       
             }
-        }
-
-       public void Email(string adEmail,string soyadEmail)
-        {
-            adEmail = ad;
-            soyadEmail = soyad;
-            email = adEmail + "." + soyadEmail + "@gmail.com";
-            Console.WriteLine(email);
         }
 
     }
