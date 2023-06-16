@@ -17,7 +17,7 @@ namespace HomeWorkMethods
             return resultAverage;
         }
 
-        public decimal CalcAverage(string name, string surname,decimal a, decimal b, decimal c = 30)
+        public decimal CalcAverage(string name, string surname,decimal a, decimal b, decimal c = 0)
         {
             decimal resultAverage = (a + b + c) / 3;
             resultAverage = Math.Round(resultAverage, 2);
