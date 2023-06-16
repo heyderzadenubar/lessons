@@ -24,56 +24,60 @@ namespace HomeWorkMethods
             Console.Write("Surname: ");
             string surname = Console.ReadLine();
             Console.WriteLine();
-
             Student student = new Student();
-        // CalcAverage
-        BeginAgainNumber1:                                      // NUMBER1
-            Console.Write("Number1: ");
-            string num1String = Console.ReadLine();              //istifadeci string tipde deyisen daxil edir
-            decimal num1Decimal;                                     // string tipin convertden sonra eded olub olmadigini yoxlamaq ucun decimal tipinde eded teyin olunur 
-            if (Decimal.TryParse(num1String, out num1Decimal))       //string tip decimala convert edilir,decimal tiple muqayise edilir
+
+        // __________ CalcAverage __________
+        BeginAgainPrice1:                                      // Price - 1
+            Console.Write("1. Price: ");
+            string price1String = Console.ReadLine();              //istifadeci string tipde deyisen daxil edir
+            decimal price1Decimal=0;                                     // string tipin convertden sonra eded olub olmadigini yoxlamaq ucun decimal tipinde eded teyin olunur 
+            if (Decimal.TryParse(price1String, out price1Decimal))       //string tip decimala convert edilir,decimal tiple muqayise edilir
             {
-                goto BeginAgainNumber2;                          // decimal-dirse ikinci reqeme kechid olur
+                goto BeginAgainPrice2;                          // decimal-dirse ikinci reqeme kecid olur
             }
             else
             {
                 Console.WriteLine("The value must be a number");   //eks halda
-                goto BeginAgainNumber1;                           //birinci reqemin yeniden daxil edilmesi
+                goto BeginAgainPrice1;                           //birinci reqemin yeniden daxil edilmesi
             }
 
-        BeginAgainNumber2:                                          // NUMBER2
-            Console.Write("Number2: ");
-            string num2String = Console.ReadLine();
-            decimal num2Decimal;
-            if (Decimal.TryParse(num2String, out num2Decimal))
+        BeginAgainPrice2:                                          // Price-2
+            Console.Write("2. Price: ");
+            string price2String = Console.ReadLine();
+            decimal price2Decimal =0;
+            if (Decimal.TryParse(price2String, out price2Decimal))
             {
-                goto BeginAgainNumber3;
+                goto BeginAgainPrice3;
             }
-            else
+            else 
             {
                 Console.WriteLine("The value must be a number");
-                goto BeginAgainNumber2;
+                goto BeginAgainPrice2;
             }
 
-        BeginAgainNumber3:                                           // NUMBER 3
-            Console.Write("Number3: ");
-            string num3String = Console.ReadLine();
-            decimal num3Decimal;
-            if (Decimal.TryParse(num3String, out num3Decimal))
+        BeginAgainPrice3:                                           // Price-3
+            Console.Write("3. Price: ");
+            string price3String = Console.ReadLine();
+            decimal price3Decimal = 0;
+            if (Decimal.TryParse(price3String, out price3Decimal) ||  (price3String == ""))
             {
-                resultAverage = student.CalcAverage(num1Decimal, num2Decimal, num3Decimal);          //AVERAGE
-                resultAverage = student.CalcAverage(resultAverage);
-                Console.WriteLine("Average of numbers: (" + num1Decimal + " + " + num2Decimal + " + " + num3Decimal + ")/3" + " = " + resultAverage);
+                if (price3String == "")
+                {
+                    price3Decimal = 0;
+                }
+                resultAverage = student.CalcAverage(price1Decimal, price2Decimal, price3Decimal);          //AVERAGE
+                resultAverage = student.CalcAverage(name, surname, price1Decimal, price2Decimal, price3Decimal);
                 Console.WriteLine();
+
+                Console.WriteLine("Rate of average price:");            // RATE OF AVERAGE
+                student.RateAverage(resultAverage);
             }
-            else
+            else if (price3String != "" && !Decimal.TryParse(price3String, out price3Decimal))
             {
                 Console.WriteLine("The value must be a number");
-                goto BeginAgainNumber3;
+                goto BeginAgainPrice3;
             }
-            
-            Console.WriteLine("Rate of average price:");            // RATE OF AVERAGE
-            student.RateAverage(resultAverage);
+           
 
 
         }

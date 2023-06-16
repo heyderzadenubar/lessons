@@ -10,18 +10,20 @@ namespace HomeWorkMethods
     {
       
 
-        public decimal CalcAverage(decimal a, decimal b, decimal c)
+        public decimal CalcAverage(decimal a, decimal b, decimal c=0)
+        {
+            decimal resultAverage =  (a + b + c) / 3;
+            resultAverage = Math.Round(resultAverage, 2);
+            return resultAverage;
+        }
+
+        public decimal CalcAverage(string name, string surname,decimal a, decimal b, decimal c = 30)
         {
             decimal resultAverage = (a + b + c) / 3;
+            resultAverage = Math.Round(resultAverage, 2);
+            Console.WriteLine($"{name} {surname}: Average price is {resultAverage}");
             return resultAverage;
         }
-
-        public decimal CalcAverage(decimal a)
-        {
-            decimal resultAverage = Math.Round(a,2);
-            return resultAverage;
-        }
-
 
         public void RateAverage(decimal a)
         {

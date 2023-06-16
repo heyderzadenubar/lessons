@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inheritance-1", "Inheritanc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inheritance-2", "Inheritance-2\Inheritance-2.csproj", "{D9C5F97D-09FA-4A37-8AC1-70A8326D5D5C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "other", "other\other.csproj", "{395DB110-38C3-485F-866C-E724200EC201}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D9C5F97D-09FA-4A37-8AC1-70A8326D5D5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9C5F97D-09FA-4A37-8AC1-70A8326D5D5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9C5F97D-09FA-4A37-8AC1-70A8326D5D5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{395DB110-38C3-485F-866C-E724200EC201}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{395DB110-38C3-485F-866C-E724200EC201}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{395DB110-38C3-485F-866C-E724200EC201}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{395DB110-38C3-485F-866C-E724200EC201}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
