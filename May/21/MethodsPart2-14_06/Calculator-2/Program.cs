@@ -22,11 +22,11 @@ namespace Calculator_2
         #endregion
         static void Main(string[] args)
         {
-         //   string  number1 = "5";
-         //   decimal  number2 = 56;
-         //   string operation = "+";
+           string  number1 = "5";
+           decimal  number2 = 56;
+            string operation = "%%";
 
-         //LocalFunction.Calculator(number1 ,number2, operation);
+         LocalFunction.Calculator(number1 ,number2, operation);
             
         }
         
