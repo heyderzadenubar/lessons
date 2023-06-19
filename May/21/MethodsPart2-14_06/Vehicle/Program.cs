@@ -43,7 +43,7 @@ namespace Vehicle
 
             Item item = new Item("MarkVehicle","ModelVehicle",2016,1000,3,5,5000,8000,1000,6000);
             item.SetPrice(6000);
-            Console.WriteLine(  );
+            Console.WriteLine();
             item.ShowAllInfo();
         }
     }

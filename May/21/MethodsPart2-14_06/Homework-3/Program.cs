@@ -116,10 +116,12 @@ namespace Homework_3
                 Calculate(num1Int2, num2String2, operation6);
             }
             #endregion
+
+
         }
 
         static void Calculate (decimal num1, decimal num2, string operation)
-         {
+        {
             decimal result;
             switch (operation)
             {
