@@ -7,7 +7,7 @@
     <ProjectGuid>{F3DA4D5A-A089-40B2-A095-710F71ED60EF}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>InheritanceFirst_23._06</RootNamespace>
-    <AssemblyName>InheritanceFirst_23._06</AssemblyName>
+    <AssemblyName>InheritanceFirst_23.06</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
