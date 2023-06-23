@@ -57,27 +57,35 @@ namespace Static2_19._06
             Console.WriteLine("_______ Customer - 1 ________");
             Customer customer = new Customer()
             {
-                
                 name = "Nubar",
                 surname = "Heyderzade",
-                email = "heyderzadenubar@gmail.com",
+                Email = "heyderzadenubar@gmail.com",
                 Username = "nubarheyderzade",
                 Password = "sd1kjfsNkhf"
             };
-            
             customer.AddCustomer(customer);
 
             Console.WriteLine("_______ Customer - 2 ________");
-
             Customer customer2 = new Customer()
             {
                 name = "Nubar2",
                 surname = "Heyderzade2",
-                email = "heyderzadenubar@gmail.com",
-                Username = "nubarheyderzade",
+                Email = "heyderzadenubar@gmail.com",
+                Username = "nubarheyderzade2",
                 Password = "2sdkjfskBf"
             };
             customer2.AddCustomer(customer2);
+            
+            Console.WriteLine("_______ Customer - 3 ________");
+            Customer customer3 = new Customer()
+            {
+                name = "Nubar3",
+                surname = "Heyderzade3",
+                Email = "heyderzadenubar3@gmail.com",
+                Username = "nubarheyderzade3",
+                Password = "2sdkjfskBfF"
+            };
+            customer3.AddCustomer(customer3);
 
 
 

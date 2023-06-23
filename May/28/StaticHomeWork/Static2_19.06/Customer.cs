@@ -19,10 +19,30 @@ namespace Static2_19._06
         public string username;
         private string _password;
 
-        public static int GlobalId;
+        public static int globalId;
 
         bool validEmailBool = true, validUsernameBool = true, validPasswordBool = true;
         
+        public string Email
+        {
+            get
+            {
+                return this.email;
+            }
+            set
+            {
+                if (CheckDuplicateEmail(value))
+                {
+                    Console.WriteLine("Elave etmek istediyiniz email artiq sistemde movcuddur!");
+                    Console.WriteLine();
+                }
+                else
+                {
+                    this.email = value;
+                }
+            }
+        }
+
         public string Username {
             get
             {
@@ -33,6 +53,7 @@ namespace Static2_19._06
                 if (CheckDuplicateUsername(value))
                 {
                     Console.WriteLine("Elave etmek istediyiniz username artiq sistemde movcuddur!");
+                    Console.WriteLine();
                     validUsernameBool = false;
                 }
                 else
@@ -81,18 +102,19 @@ namespace Static2_19._06
                 else
                 {
                     Console.WriteLine("Sifrede en az 1 boyuk herf ve 1 reqem olmalidir.");
+                    Console.WriteLine();
                     validPasswordBool = false;
                 }
             }
             else
             {
                 Console.WriteLine("Sifre en az 8 simvoldan ibaret olmalidir!");
+                Console.WriteLine();
                 validPasswordBool = false;
             }
             return true;
         }
-
-       
+        
         static Customer()
         {
             database = new ArrayList();
@@ -100,7 +122,7 @@ namespace Static2_19._06
 
         public Customer()
         {
-            this._id = Interlocked.Increment(ref GlobalId);
+            //this._id = Interlocked.Increment(ref globalId);
         }
 
         public bool CheckDuplicateUsername(string usernameCheck)
@@ -123,8 +145,8 @@ namespace Static2_19._06
                 Customer customerTemp = (Customer)database[i];
                 if (customerTemp.email==emailCheck)
                 {
-                    Console.WriteLine("Elave etmek istediyiniz email artiq sistemde movcuddur!");
                     validEmailBool = false;
+                    return true;
                 }
             }
             return false;
@@ -136,10 +158,33 @@ namespace Static2_19._06
             {
                 if(validEmailBool==true && validPasswordBool==true && validUsernameBool==true)
                 {
+                    this._id = Interlocked.Increment(ref globalId);
                     database.Add(customer);
                     Console.WriteLine($"Yeni musteri sisteme elave olundu!");
+                    Console.WriteLine();
+                    ShowCustomer();
                 }
                 
+            }
+        }
+
+        public void ShowCustomer()    
+        {
+            //foreach (var item in database)     // Static2_19.06.Customer qaytarir
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            for(int i = 0; i < database.Count; i++)
+            {
+                Customer customerTemp = (Customer)database[i];
+                Console.WriteLine($"ID: {customerTemp._id}");
+                Console.WriteLine($"Name: {customerTemp.name}");
+                Console.WriteLine($"Surname: {customerTemp.surname}");
+                Console.WriteLine($"Email: {customerTemp.email}");
+                Console.WriteLine($"Username: {customerTemp.username}");
+                Console.WriteLine($"Password: {customerTemp._password}");
+                Console.WriteLine();
             }
         }
     }
