@@ -143,6 +143,7 @@ namespace Homework_1
                         {
                             arrList.Clear();
                             Console.WriteLine("Butun elementler silindi");
+                            arrList.TrimToSize();
                         }
                         else if(ans.ToUpper() == "Y")
                         { startRemove:
