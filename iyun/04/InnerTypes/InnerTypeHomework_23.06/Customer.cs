@@ -11,8 +11,8 @@ namespace InnerTypeHomework_23._06
         public int CustomerId { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        public DateTime CreateDateCustomer { get; set; }
-        public DateTime? EditDateCustomer { get; set; }
+        public DateTime CreateDate { get; set; }
+        public DateTime? EditDate { get; set; }
 
 
         public Contacts[] Contacts;
@@ -33,12 +33,12 @@ namespace InnerTypeHomework_23._06
             Console.WriteLine($"ID: {CustomerId}");
             Console.WriteLine($"Name: {Name}");
             Console.WriteLine($"Surname: {Surname}");
-            Console.WriteLine($"Create date: {CreateDateCustomer}");
-            if (EditDateCustomer == null)
+            Console.WriteLine($"Create date: {CreateDate}");
+            if (EditDate == null)
             {
                 Console.WriteLine($"Edit date: Data is not edited");
             }
-            Console.WriteLine($"Edit date: {EditDateCustomer}");
+            Console.WriteLine($"Edit date: {EditDate}");
         }
 
         public void ShowContacts()
