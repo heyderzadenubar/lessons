@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InnerTypes
 {
-    public class Contacts
+    internal class Contacts
     {
         public int Id { get; set; }
         public string Email { get; set; }

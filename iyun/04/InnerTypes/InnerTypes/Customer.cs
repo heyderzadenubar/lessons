@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InnerTypes
 {
-    public class Customer
+    internal class Customer
     {
         public int CustomerId { get; set; }
         public string Name { get; set; }

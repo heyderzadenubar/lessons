@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.33529.398
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnerTypes", "InnerTypes\InnerTypes.csproj", "{A8BB6720-9989-44CA-936C-1012372C1C78}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "--InnerTypes", "InnerTypes\--InnerTypes.csproj", "{A8BB6720-9989-44CA-936C-1012372C1C78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inheritance-1", "Inheritance\Inheritance-1.csproj", "{3DC056D5-D878-4A70-B7D9-1DA9AE32F223}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "--Inheritance-1", "Inheritance\--Inheritance-1.csproj", "{3DC056D5-D878-4A70-B7D9-1DA9AE32F223}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inheritance-2", "Inheritance-2\Inheritance-2.csproj", "{D9C5F97D-09FA-4A37-8AC1-70A8326D5D5C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "--Inheritance-2", "Inheritance-2\--Inheritance-2.csproj", "{D9C5F97D-09FA-4A37-8AC1-70A8326D5D5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "other", "other\other.csproj", "{395DB110-38C3-485F-866C-E724200EC201}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "--other", "other\--other.csproj", "{395DB110-38C3-485F-866C-E724200EC201}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InnerTypeHomework_23.06", "InnerTypeHomework_23.06.\InnerTypeHomework_23.06.csproj", "{77BD3CAE-D78F-44C2-A4BC-FB086757083C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{395DB110-38C3-485F-866C-E724200EC201}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{395DB110-38C3-485F-866C-E724200EC201}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{395DB110-38C3-485F-866C-E724200EC201}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77BD3CAE-D78F-44C2-A4BC-FB086757083C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77BD3CAE-D78F-44C2-A4BC-FB086757083C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77BD3CAE-D78F-44C2-A4BC-FB086757083C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77BD3CAE-D78F-44C2-A4BC-FB086757083C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InnerTypes
 {
-    public class Order
+    internal class Order
     {
 
         public int Id { get; set; }

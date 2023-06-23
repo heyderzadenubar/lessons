@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InnerTypes
+namespace InnerTypeHomework_23._06
 {
-    internal class City
+    class City
     {
         public int Id { get; set; }
         public string Name { get; set; }

@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InnerTypes
+namespace InnerTypeHomework_23._06
 {
-    internal class Address
+    public class Address
     {
+
         public int Id { get; set; }
         public int No { get; set; }
         public string Building { get; set; }
