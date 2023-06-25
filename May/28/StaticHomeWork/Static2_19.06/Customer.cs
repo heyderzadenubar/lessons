@@ -58,6 +58,7 @@ namespace Static2_19._06
                 }
                 else
                 {
+                    validUsernameBool = true;
                     this.username = value;
                 }
             }
@@ -147,6 +148,10 @@ namespace Static2_19._06
                 {
                     validEmailBool = false;
                     return true;
+                }
+                else
+                {
+                    validEmailBool = true;
                 }
             }
             return false;
