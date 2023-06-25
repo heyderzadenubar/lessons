@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.33529.398
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP-Inheritance_Part3_homework1", "OOP-Inheritance_Part3_homework1\OOP-Inheritance_Part3_homework1.csproj", "{22938C12-6FC7-4CFE-9DF3-FD681C48B467}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "---OOP-Inheritance_Part3_homework1", "OOP-Inheritance_Part3_homework1\---OOP-Inheritance_Part3_homework1.csproj", "{22938C12-6FC7-4CFE-9DF3-FD681C48B467}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework 24.06", "Homework\Homework 24.06.csproj", "{B8DACBE2-3104-4DB0-8D1B-B43CEAF8EC22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{22938C12-6FC7-4CFE-9DF3-FD681C48B467}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22938C12-6FC7-4CFE-9DF3-FD681C48B467}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22938C12-6FC7-4CFE-9DF3-FD681C48B467}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8DACBE2-3104-4DB0-8D1B-B43CEAF8EC22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8DACBE2-3104-4DB0-8D1B-B43CEAF8EC22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8DACBE2-3104-4DB0-8D1B-B43CEAF8EC22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8DACBE2-3104-4DB0-8D1B-B43CEAF8EC22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

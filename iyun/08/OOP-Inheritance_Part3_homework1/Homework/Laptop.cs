@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOP_Inheritance_Part3_homework1
+namespace Homework
 {
-    public  sealed class Laptop : Base
+    public sealed class Laptop : Item
     {
         public string CPU { get; set; }
-        public int Ram { get; set; }
+        public string  Ram { get; set; }
         public string GraphicCard { get; set; }
     }
 }
