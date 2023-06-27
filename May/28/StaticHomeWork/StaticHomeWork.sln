@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.33529.398
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "--StaticHomeWork", "StaticHomeWork\--StaticHomeWork.csproj", "{86FDF306-367A-4D60-B25A-F27E1B4A859B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Static2_19.06", "Static2_19.06\Static2_19.06.csproj", "{5C4ECD1D-3BB8-4C01-84B0-2A5175919FF3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "+Static2_19.06", "Static2_19.06\+Static2_19.06.csproj", "{5C4ECD1D-3BB8-4C01-84B0-2A5175919FF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
