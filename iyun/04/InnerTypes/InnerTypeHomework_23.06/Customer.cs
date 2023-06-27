@@ -38,7 +38,10 @@ namespace InnerTypeHomework_23._06
             {
                 Console.WriteLine($"Edit date: Data is not edited");
             }
-            Console.WriteLine($"Edit date: {EditDate}");
+            else
+            {
+                Console.WriteLine($"Edit date: {EditDate}");  //format duzelt
+            }
         }
 
         public void ShowContacts()

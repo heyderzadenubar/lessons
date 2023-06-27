@@ -40,8 +40,8 @@ namespace InnerTypeHomework_23._06
                 CustomerId = 1,
                 Name = "Nubar",
                 Surname = "Heyderzade",
-                CreateDateCustomer = DateTime.Now,
-                EditDateCustomer = null
+                CreateDate = DateTime.Now,
+                EditDate = null
             };
 
             customer.Contacts[0] = new Contacts()
