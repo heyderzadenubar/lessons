@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "-Homework-3 Calculator", "H
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "+Homework4", "Homework4\+Homework4.csproj", "{85F05A12-DC59-4FC9-8BF4-36C5C6F19BF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator-2", "Calculator-2\Calculator-2.csproj", "{C1CBBD2A-D2CD-4F98-9404-E5C9BD930115}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "+Calculator-2", "Calculator-2\+Calculator-2.csproj", "{C1CBBD2A-D2CD-4F98-9404-E5C9BD930115}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vehicle", "Vehicle\Vehicle.csproj", "{651F3C43-ED2E-4D31-ADDD-5C5474BEEBC9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "+Vehicle", "Vehicle\+Vehicle.csproj", "{651F3C43-ED2E-4D31-ADDD-5C5474BEEBC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
