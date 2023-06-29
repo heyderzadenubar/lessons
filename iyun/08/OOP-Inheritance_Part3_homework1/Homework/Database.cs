@@ -7,22 +7,15 @@ using System.Collections;
 
 namespace Homework
 {
-    public class Database:Item
+    public class Database       // Item class-indan inherit  almaq lazim deyil
     {
         private static ArrayList database;
-        public  TV[] tvs;
-        public  Laptop[] laptops;
 
         static Database()
         {
             database = new ArrayList();
         }
       
-        public Database()
-        {
-            tvs = new TV[10];
-            laptops = new Laptop[10];
-        }
 
         public static bool CheckDublicateBarcode(string barcode)
         {

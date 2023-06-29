@@ -92,37 +92,16 @@ namespace Homework
             Console.WriteLine();
             Console.WriteLine("_______ Add new items _______");
 
-            db.tvs[0] = new TV    // It will not be added
-            {
-                HasHDMI = true,
-                Barcode = "1233456",
-                Model = "dfdModel",
-                Brand = "Samsung db.tvs[0]",
-                CreateDate = DateTime.Now,
-                BuyPrice = 1700,
-                SellPrice = 1600,
-                OfferPrice  =1200
-            };
+            
 
-            db.laptops[0] = new Laptop
-            {
-                Ram = "8GB",
-                Barcode = "12354567",
-                CreateDate = DateTime.Now,
-                Brand = "Asus laptop[0]",
-                BuyPrice = 1000,
-                SellPrice = 1600,
-                OfferPrice = 1200
-            };
-
-            db.NewItems(db.tvs[0], db.laptops[0]);
+            db.NewItems(tv, laptop2);
 
             Console.WriteLine();
             Console.WriteLine("_______ Update item _______");
             db.UpdateItem(laptop);
             Console.WriteLine();
             Console.WriteLine("_______ Delete item _______");
-            db.DeleteItem(db.laptops[0]);
+            db.DeleteItem(tv);
 
         }
     }
