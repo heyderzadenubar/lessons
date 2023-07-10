@@ -8,8 +8,6 @@ namespace Homework_2
 {
     public class GenericRepository <T> : ICrud<T>
     {
-
-        public List<T> ItemList = new List<T>();
         public GenericRepository()
         {
 
@@ -19,15 +17,16 @@ namespace Homework_2
         {
             foreach (var item in data)
             {
-                ItemList.Add(item);
+                VirtualDatabase<T>.ItemList.Add(item);
             }
         }
         public virtual void Read()
         {
-            foreach (T item in ItemList)
-            {
-                Console.WriteLine(item);
-            }
+                //foreach (T item in VirtualDatabase<T>.ItemList)
+                //{
+                //    Console.WriteLine(item);
+                //}
+            
         }
 
         public virtual void Update(T data)
@@ -39,7 +38,7 @@ namespace Homework_2
         {
             foreach (var item in data)
             {
-                ItemList.Remove(item);
+                VirtualDatabase<T>.ItemList.Remove(item);
             }
         }
 

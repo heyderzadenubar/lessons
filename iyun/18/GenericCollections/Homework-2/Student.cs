@@ -30,12 +30,21 @@ namespace Homework_2
             _id = Interlocked.Increment(ref globalId);
         }
 
-        public override void Read()
-        {
-            ItemList.ForEach(i => Console.WriteLine($"____Student - {i.Id}\r\n_____," +
-                                                      $"ID: {i.Id}\r\n" +
-                                                      $"Name: {i.Name}\r\n" +
-                                                      $"Surname: {i.Surname}\r\n"));
-        }
+        //public override string ToString()
+        //{
+        //    VirtualDatabase<Student>.ItemList.ForEach(i => Console.WriteLine($"_Student - {i.Id}\r\n__" +
+        //                                            $"ID: {i.Id}\r\n" +
+        //                                            $"Name: {i.Name}\r\n" +
+        //                                            $"Surname: {i.Surname}\r\n"));
+        //    return "return number";
+        //}
+
+        //public override void Read()
+        //{
+        //    VirtualDatabase<Student>.ItemList.ForEach(i => Console.WriteLine($"____Student - {i.Id}\r\n_____," +
+        //                                               $"ID: {i.Id}\r\n" +
+        //                                               $"Name: {i.Name}\r\n" +
+        //                                               $"Surname: {i.Surname}\r\n"));
+        //}
     }
 }

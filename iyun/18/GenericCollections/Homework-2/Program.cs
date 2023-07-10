@@ -32,13 +32,13 @@ namespace Homework_2
                 Name = "Nubar2",
                 Surname = "Heyderzade2"
             };
-            Student student3= new Student()
-            {
-                Name = "Nubar3",
-                Surname = "Heyderzade3"
-            };
+            //Student student3= new Student()
+            //{
+            //    Name = "Nubar3",
+            //    Surname = "Heyderzade3"
+            //};
             
-            studentRepository.Create(student1,student2,student3);
+            studentRepository.Create(student1,student2);
             studentRepository.Read();
 
 

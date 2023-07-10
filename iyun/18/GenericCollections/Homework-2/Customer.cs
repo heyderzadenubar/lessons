@@ -31,12 +31,12 @@ namespace Homework_2
         }
 
 
-        public override void Read()
+       /* public override void Read()
         {
-            ItemList.ForEach(i => Console.WriteLine($"____ Customer - {i.Id}\r\n_____," +
+            VirtualDatabase<Customer>.ItemList.ForEach(i => Console.WriteLine($"____ Customer - {i.Id}\r\n_____," +
                                                       $"ID: {i.Id}\r\n" +
                                                       $"Name: {i.Name}\r\n" +
                                                       $"Surname: {i.Surname}\r\n"));
-        }
+        }*/
     }
 }

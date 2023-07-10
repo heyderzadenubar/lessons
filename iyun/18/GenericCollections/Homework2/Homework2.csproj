@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B1DCF337-6D21-438D-9D5E-FE99A79FC808}</ProjectGuid>
+    <ProjectGuid>{B510CCAE-EFF1-4240-9EE2-74807CDFDF82}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Homework_2</RootNamespace>
-    <AssemblyName>Homework-2</AssemblyName>
+    <RootNamespace>Homework2</RootNamespace>
+    <AssemblyName>Homework2</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,14 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Book.cs" />
-    <Compile Include="Customer.cs" />
     <Compile Include="GenericRepository.cs" />
-    <Compile Include="ICrud.cs" />
+    <Compile Include="ICRUD.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Student.cs" />
-    <Compile Include="Teacher.cs" />
+    <Compile Include="VirtualDatabase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
