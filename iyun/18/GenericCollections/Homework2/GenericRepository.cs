@@ -14,7 +14,6 @@ namespace Homework2
         }
         public virtual void Read()
         {
-            
         }
         public virtual void Update(int id)
         {

@@ -18,6 +18,7 @@ namespace Homework2
              class'ı üçün İnterface'də istifadə edin.
             */
             #endregion
+
             #region Student
 
             GenericRepository<Student> studentRepository = new GenericRepository<Student>();
@@ -35,11 +36,6 @@ namespace Homework2
                 Email = "Email2",
                 Phone = 123
             };
-            //Student student3= new Student()
-            //{
-            //    Name = "Nubar3",
-            //    Surname = "Heyderzade3"
-            //};
 
             studentRepository.Create(student1);
             studentRepository.Create(student2);
@@ -48,6 +44,34 @@ namespace Homework2
             student1.Update(1);
             student2.Delete(2);
             #endregion
+
+            #region Books
+            GenericRepository<Book> bookRepository = new GenericRepository<Book>();
+            Book book1 = new Book()
+            {
+                Name = "book1",
+                Author = "Author1"
+            };
+            Book book2 = new Book()
+            {
+                Name = "book2",
+                Author = "Author2"
+            };
+            Book book3 = new Book()
+            {
+                Name = "book3",
+                Author = "Author3"
+            };
+            bookRepository.Create(book1);
+            bookRepository.Create(book2);
+            bookRepository.Create(book3);
+            book1.Read();
+            book2.Read();
+            book1.Update(1);
+            book2.Delete(2);
+
+            #endregion
         }
+
     }
 }

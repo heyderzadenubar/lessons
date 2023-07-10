@@ -12,7 +12,7 @@ namespace Homework2
         public string Surname { get; set; }
         public int Phone { get; set; }
         public string Email { get; set; }
-        private int _id;
+        readonly private int _id;
         public static int GlobalId;
 
         public int Id
@@ -33,7 +33,7 @@ namespace Homework2
 
         public override void Read()
         {
-            Console.WriteLine($"_Student-{i}_\r\nName: {Name}\r\nSurname: {Surname}\r\n");
+            Console.WriteLine($"_Student-{i}_\r\nName: {Name}\r\nSurname: {Surname}\r\nEmail: {Email}");
             i++;
         }
 
