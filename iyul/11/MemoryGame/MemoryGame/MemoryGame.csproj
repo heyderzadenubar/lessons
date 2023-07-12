@@ -53,6 +53,9 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="GetIndexPicturebox.cs" />
+    <Compile Include="MyPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -82,34 +85,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\beetroot.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\broccoli.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cabbage.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\chil.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\corn.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\mushroom.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\onion.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pepper_green.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pepper_yellow.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\tomato.png" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace MemoryGame
 {
@@ -31,65 +32,158 @@ namespace MemoryGame
         {
             InitializeComponent();
         }
+        
+        PictureBox[] pictures = new PictureBox[20];
+        int i;
 
         private void MemoryGameForm_Load(object sender, EventArgs e)
         {
-            List<PictureBox> PictureBoxList = new List<PictureBox>();
-            List<string> imagePathList = new List<string>()
-            {
-                "E:\\images\\0.png",
-                "E:\\images\\1.png",
-                "E:\\images\\2.png",
-                "E:\\images\\3.png",
-                "E:\\images\\4.png",
-                "E:\\images\\5.png",
-                "E:\\images\\6.png",
-                "E:\\images\\7.png",
-                "E:\\images\\8.png",
-                "E:\\images\\9.png",
-                "E:\\images\\0.png",
-                "E:\\images\\1.png",
-                "E:\\images\\2.png",
-                "E:\\images\\3.png",
-                "E:\\images\\4.png",
-                "E:\\images\\5.png",
-                "E:\\images\\6.png",
-                "E:\\images\\7.png",
-                "E:\\images\\8.png",
-                "E:\\images\\9.png",
-            };
-            PictureBox[] pictures = new PictureBox[20];
-            Random rand = new Random();
-            for (int i = 0; i < pictures.Length; i++)
+            for (i = 0; i < pictures.Length; i++)
             {
                 pictures[i] = new PictureBox();
                 pictures[i].Size = new Size(100, 100);
                 pictures[i].Tag = i;    //  in "Set image()" method must use
                 pictures[i].BackColor = Color.Gray;
+                pictures[i].Cursor = Cursors.Hand;
                 pictures[i].SizeMode = PictureBoxSizeMode.StretchImage;
-                BeginAgainForRandom:
-                int imageIndex = rand.Next(0, 10);
-                string imagePath = imagePathList.Find(path => path.Contains("E:\\images\\" + imageIndex + ".png"));
-
-                if (imagePath != null)
-                {
-                    pictures[i].Image = Image.FromFile("E:\\images\\" + imageIndex + ".png");
-                }
-                else
-                {
-                    goto BeginAgainForRandom;  
-                }
-                imagePathList.Remove("E:\\images\\" + imageIndex + ".png");  // imagepathda sekilin olub olmadigini yoxlamaliyam
+                pictures[i].Click += PictureBoxClick;
                 ButtonFlowLayoutPanel.Controls.Add(pictures[i]);
-            }
-
-            for (int i = 0; i < 20; i++)
-            {
-                PictureBoxList.Add(pictures[i]);
             }
         }
 
+        bool isFirstClick = false, isSecondClick = false;
+        int firstClickTag, secondClickTag;
 
+        private void PictureBoxClick(object sender, EventArgs e)
+        {
+            int index = int.Parse(((PictureBox)sender).Tag.ToString());
+            if (isFirstClick == false)
+            {
+                isFirstClick = true;
+                firstClickTag = index;
+                SetImage(index);
+            }
+            else if(isSecondClick == false)
+            {
+                isSecondClick = true;
+                secondClickTag = index;
+                SetImage(index);
+            }
+            else if(isFirstClick==true && isSecondClick == true)
+            {
+                if (pictures[firstClickTag].ImageLocation != pictures[secondClickTag].ImageLocation)
+                {
+                    isFirstClick = true;
+                    isSecondClick = false;
+                    RemoveImage(firstClickTag, secondClickTag);
+                    firstClickTag = index;
+                    SetImage(index);
+                }
+                else
+                {
+                    isFirstClick = true;
+                    isSecondClick = false;
+                    firstClickTag = index;
+                    SetImage(index);
+                }
+            }
+            
+        }
+
+        private void SetImage(int index)
+        {
+            switch (index)
+            {
+                case 0:
+                    pictures[index].Image = Image.FromFile("E:\\images\\0.png");
+                    pictures[index].ImageLocation = "E:\\images\\0.png";
+                    break;
+                case 1:
+                    pictures[index].Image = Image.FromFile("E:\\images\\1.png");
+                    pictures[index].ImageLocation = "E:\\images\\1.png";
+                    break;
+                case 2:
+                    pictures[index].Image = Image.FromFile("E:\\images\\6.png");
+                    pictures[index].ImageLocation = "E:\\images\\6.png";
+                    break;
+                case 3:
+                    pictures[index].Image = Image.FromFile("E:\\images\\2.png");
+                    pictures[index].ImageLocation = "E:\\images\\2.png";
+                    break;
+                case 4:
+                    pictures[index].Image = Image.FromFile("E:\\images\\4.png");
+                    pictures[index].ImageLocation = "E:\\images\\4.png";
+                    break;
+                case 5:
+                    pictures[index].Image = Image.FromFile("E:\\images\\5.png");
+                    pictures[index].ImageLocation = "E:\\images\\5.png";
+                    break;
+                case 6:
+                    pictures[index].Image = Image.FromFile("E:\\images\\7.png");
+                    pictures[index].ImageLocation = "E:\\images\\7.png";
+                    break;
+                case 7:
+                    pictures[index].Image = Image.FromFile("E:\\images\\3.png");
+                    pictures[index].ImageLocation = "E:\\images\\3.png";
+                    break;
+                case 8:
+                    pictures[index].Image = Image.FromFile("E:\\images\\0.png");
+                    pictures[index].ImageLocation = "E:\\images\\0.png";
+                    break;
+                case 9:
+                    pictures[index].Image = Image.FromFile("E:\\images\\1.png");
+                    pictures[index].ImageLocation = "E:\\images\\1.png";
+                    break;
+                case 10:
+                    pictures[index].Image = Image.FromFile("E:\\images\\2.png");
+                    pictures[index].ImageLocation = "E:\\images\\2.png";
+                    break;
+                case 11:
+                    pictures[index].Image = Image.FromFile("E:\\images\\9.png");
+                    pictures[index].ImageLocation = "E:\\images\\9.png";
+                    break;
+                case 12:
+                    pictures[index].Image = Image.FromFile("E:\\images\\3.png");
+                    pictures[index].ImageLocation = "E:\\images\\3.png";
+                    break;
+                case 13:
+                    pictures[index].Image = Image.FromFile("E:\\images\\4.png");
+                    pictures[index].ImageLocation = "E:\\images\\4.png";
+                    break;
+                case 14:
+                    pictures[index].Image = Image.FromFile("E:\\images\\5.png");
+                    pictures[index].ImageLocation = "E:\\images\\5.png";
+                    break;
+                case 15:
+                    pictures[index].Image = Image.FromFile("E:\\images\\6.png");
+                    pictures[index].ImageLocation = "E:\\images\\6.png";
+                    break;
+                case 16:
+                    pictures[index].Image = Image.FromFile("E:\\images\\7.png");
+                    pictures[index].ImageLocation = "E:\\images\\7.png";
+                    break;
+                case 17:
+                    pictures[index].Image = Image.FromFile("E:\\images\\8.png");
+                    pictures[index].ImageLocation = "E:\\images\\8.png";
+                    break;
+                case 18:
+                    pictures[index].Image = Image.FromFile("E:\\images\\8.png");
+                    pictures[index].ImageLocation = "E:\\images\\8.png";
+                    break;
+                case 19:
+                    pictures[index].Image = Image.FromFile("E:\\images\\9.png");
+                    pictures[index].ImageLocation = "E:\\images\\9.png";
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void RemoveImage(int firstClickindex, int secondClickIndex)
+        {
+            pictures[firstClickindex].Image = null;
+            pictures[secondClickIndex].Image = null;
+        }
     }
     
 }
