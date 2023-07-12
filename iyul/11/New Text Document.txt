@@ -1,0 +1,93 @@
+
+        PictureBox[] picture = new PictureBox[10];
+        PictureBox[] picture2 = new PictureBox[10];
+        int count = 0,moves=0;
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                picture[i] = new PictureBox();
+                picture[i].Size = new Size(100, 100);
+                picture[i].BackColor = Color.Gray;
+                picture[i].Cursor = Cursors.Hand;
+                picture[i].SizeMode = PictureBoxSizeMode.StretchImage;
+                picture[i].Tag = i;
+                picture[i].Click += Picture_click;
+                ButtonFlowLayoutPanel.Controls.Add(picture[i]);
+            }
+            for (int i = 0; i < 10; i++)
+            {
+                picture2[i] = new PictureBox();
+                picture2[i].Size = new Size(100, 100);
+                picture2[i].BackColor = Color.Gray;
+                picture2[i].Cursor = Cursors.Hand;
+                picture2[i].SizeMode = PictureBoxSizeMode.StretchImage;
+                picture2[i].Tag = i;
+                picture2[i].Click += Picture2_click;
+                ButtonFlowLayoutPanel.Controls.Add(picture2[i]);
+            }
+        }
+
+        private void SetImage(int index)
+        {
+            picture[index].Image = Image.FromFile("E:\\images\\" + index + ".png");
+        }
+        private void SetImage2(int index)
+        {
+            picture2[index].Image = Image.FromFile("E:\\images\\" + index + ".png");
+        }
+
+        private void RemoveImage(int? index)
+        {
+            picture[index].Image = null;
+        }
+
+        int? firstClickIndex, secondClickIndex;
+        private void Picture_click(object sender, EventArgs e)
+        {
+            int index = int.Parse((sender as PictureBox).Tag.ToString());
+            IndexLabel.Text = index.ToString();
+            if (firstClickIndex == null)
+            {
+                firstClickIndex = index;
+            }
+            else if(secondClickIndex==null)
+            {
+                secondClickIndex = index;
+            }
+            count++;
+            moves++;
+            if (count <= 2)
+            {
+               SetImage(index);
+            }
+            else if (count > 2)
+            {
+                RemoveImage(firstClickIndex);
+                RemoveImage(secondClickIndex);
+            }
+            MoveLabel.Text = moves.ToString();
+        }
+        private void Picture2_click(object sender, EventArgs e)
+        {
+            int index = int.Parse((sender as PictureBox).Tag.ToString());
+            IndexLabel.Text = index.ToString();
+            clickedIndexList.Add(index);
+            count++;
+            moves++;
+            if (count <= 2)
+            {
+                SetImage2(index);
+            }
+            else if (count > 2)
+            {
+               // if (clickedIndexList[0] == clickedIndexList[1])
+                    foreach (var clickedPictureBoxIndex in clickedIndexList)
+                    {
+                        RemoveImage(clickedPictureBoxIndex);
+                        clickedIndexList.RemoveRange(0, 2);
+                    }
+                count = 0;
+            }
+            MoveLabel.Text = moves.ToString();
+        }
