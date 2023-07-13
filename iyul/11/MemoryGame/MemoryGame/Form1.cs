@@ -44,50 +44,96 @@ namespace MemoryGame
                 pictures[i].Size = new Size(100, 100);
                 pictures[i].Tag = i;    //  in "Set image()" method must use
                 pictures[i].BackColor = Color.Gray;
-                pictures[i].Cursor = Cursors.Hand;
                 pictures[i].SizeMode = PictureBoxSizeMode.StretchImage;
                 pictures[i].Click += PictureBoxClick;
+                pictures[i].MouseHover += PictureBoxMouseHover;
+                pictures[i].MouseLeave += PictureBoxMouseLeave;
                 ButtonFlowLayoutPanel.Controls.Add(pictures[i]);
             }
         }
 
+        private void PictureBoxMouseHover(object sender, EventArgs e)
+        {
+            int index = int.Parse(((PictureBox)sender).Tag.ToString());
+            if (pictures[index].Image == null)
+            {
+                pictures[index].Cursor = Cursors.Hand;
+            }
+            else
+            {
+                pictures[index].Cursor = Cursors.Default;
+            }
+
+        }
+
+        private void PictureBoxMouseLeave(object sender, EventArgs e)
+        {
+            int index = int.Parse(((PictureBox)sender).Tag.ToString());
+             pictures[index].Cursor = Cursors.Default;
+        }
+
         bool isFirstClick = false, isSecondClick = false;
-        int firstClickTag, secondClickTag;
+        int firstClickTag, secondClickTag, moveCount = 0, findSamePicturesCount = 0;
 
         private void PictureBoxClick(object sender, EventArgs e)
         {
-            int index = int.Parse(((PictureBox)sender).Tag.ToString());
-            if (isFirstClick == false)
+            if (((PictureBox)sender).Image == null)
             {
-                isFirstClick = true;
-                firstClickTag = index;
-                SetImage(index);
-            }
-            else if(isSecondClick == false)
-            {
-                isSecondClick = true;
-                secondClickTag = index;
-                SetImage(index);
-            }
-            else if(isFirstClick==true && isSecondClick == true)
-            {
-                if (pictures[firstClickTag].ImageLocation != pictures[secondClickTag].ImageLocation)
+
+                int index = int.Parse(((PictureBox)sender).Tag.ToString());
+                if (isFirstClick == false)
                 {
                     isFirstClick = true;
-                    isSecondClick = false;
-                    RemoveImage(firstClickTag, secondClickTag);
                     firstClickTag = index;
                     SetImage(index);
                 }
-                else
+                else if (isSecondClick == false)
                 {
-                    isFirstClick = true;
-                    isSecondClick = false;
-                    firstClickTag = index;
+                    isSecondClick = true;
+                    secondClickTag = index;
                     SetImage(index);
+                    if (findSamePicturesCount == 9)
+                    {
+                        DialogResult Result = MessageBox.Show("You win! Do you want play again?","",MessageBoxButtons.YesNo,MessageBoxIcon.Information);
+                        if (Result == DialogResult.Yes)
+                        {
+                            for(int i = 0; i < 20; i++)
+                            {
+                                pictures[i].Image = null;
+                                moveCount = 0;
+                                findSamePicturesCount = 0;
+                            }
+                        }
+                        else
+                        {
+                            Application.Exit();
+                        }
+                    }
+                }
+                else if (isFirstClick == true && isSecondClick == true)
+                {
+                    if (pictures[firstClickTag].ImageLocation != pictures[secondClickTag].ImageLocation)
+                    {
+                        moveCount++;
+                        MoveCountLabel.Text = moveCount.ToString();
+                        isFirstClick = true;
+                        isSecondClick = false;
+                        RemoveImage(firstClickTag, secondClickTag);
+                        firstClickTag = index;
+                        SetImage(index);
+                    }
+                    else
+                    {
+                        moveCount++;
+                        findSamePicturesCount++;
+                        MoveCountLabel.Text = moveCount.ToString();
+                        isFirstClick = true;
+                        isSecondClick = false;
+                        firstClickTag = index;
+                        SetImage(index);
+                    }
                 }
             }
-            
         }
 
         private void SetImage(int index)

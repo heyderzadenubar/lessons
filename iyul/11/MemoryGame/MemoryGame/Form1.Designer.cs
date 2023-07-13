@@ -30,14 +30,12 @@
         {
             this.ButtonFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.MoveLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.IndexLabel = new System.Windows.Forms.Label();
+            this.MoveCountLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ButtonFlowLayoutPanel
             // 
-            this.ButtonFlowLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.ButtonFlowLayoutPanel.Location = new System.Drawing.Point(0, 2);
             this.ButtonFlowLayoutPanel.Name = "ButtonFlowLayoutPanel";
             this.ButtonFlowLayoutPanel.Size = new System.Drawing.Size(598, 426);
             this.ButtonFlowLayoutPanel.TabIndex = 0;
@@ -45,49 +43,29 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(615, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 17);
+            this.label1.Size = new System.Drawing.Size(67, 22);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Moves";
+            this.label1.Text = "Moves:";
             // 
-            // MoveLabel
+            // MoveCountLabel
             // 
-            this.MoveLabel.AutoSize = true;
-            this.MoveLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MoveLabel.Location = new System.Drawing.Point(670, 29);
-            this.MoveLabel.Name = "MoveLabel";
-            this.MoveLabel.Size = new System.Drawing.Size(0, 17);
-            this.MoveLabel.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(621, 71);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "index";
-            // 
-            // IndexLabel
-            // 
-            this.IndexLabel.AutoSize = true;
-            this.IndexLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IndexLabel.Location = new System.Drawing.Point(668, 71);
-            this.IndexLabel.Name = "IndexLabel";
-            this.IndexLabel.Size = new System.Drawing.Size(0, 17);
-            this.IndexLabel.TabIndex = 4;
+            this.MoveCountLabel.AutoSize = true;
+            this.MoveCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MoveCountLabel.Location = new System.Drawing.Point(676, 29);
+            this.MoveCountLabel.Name = "MoveCountLabel";
+            this.MoveCountLabel.Size = new System.Drawing.Size(20, 22);
+            this.MoveCountLabel.TabIndex = 2;
+            this.MoveCountLabel.Text = "0";
             // 
             // MemoryGameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(766, 436);
-            this.Controls.Add(this.IndexLabel);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.MoveLabel);
+            this.ClientSize = new System.Drawing.Size(732, 432);
+            this.Controls.Add(this.MoveCountLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ButtonFlowLayoutPanel);
             this.Name = "MemoryGameForm";
@@ -102,9 +80,7 @@
 
         private System.Windows.Forms.FlowLayoutPanel ButtonFlowLayoutPanel;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label MoveLabel;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label IndexLabel;
+        private System.Windows.Forms.Label MoveCountLabel;
     }
 }
 
