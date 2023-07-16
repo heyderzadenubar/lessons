@@ -59,7 +59,8 @@ namespace Homework_1
             customers.Add(new Customer() { Name = "CustomerName4", Surname = "CustomerSurname4", Age = 34,
                                            Address = { Id = 4, No = 2, City = "Baku", Country = "Azerbaijan", Building = "Building", Street = "Street2" } });
 
-            customers.ForEach(i => Console.WriteLine($"_______Customer-{i.Id}_______\r\nID: {i.Id}\r\nName: {i.Name}\r\nSurname: {i.Surname}\r\nAge: {i.Age}\r\n" +
+            customers.ForEach(i => Console.WriteLine($"_______Customer-{i.Id}_______\r\n" +
+                $"ID: {i.Id}\r\nName: {i.Name}\r\nSurname: {i.Surname}\r\nAge: {i.Age}\r\n" +
                                                    $"--Address Info:--\r\nID: {i.Address.Id}\r\nNo: {i.Address.No}\r\nCity: {i.Address.City}\r\nCountry: {i.Address.Country}\r\nBuilding: {i.Address.Building}\r\nStreet: {i.Address.Street}"));
         }
     }

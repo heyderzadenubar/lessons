@@ -20,8 +20,11 @@ namespace Homework2
             #endregion
 
             #region Student
+            Student st = new Student();
+            st.GetAll();
 
             GenericRepository<Student> studentRepository = new GenericRepository<Student>();
+
             Student student1 = new Student()
             {
                 Name = "Nubar",

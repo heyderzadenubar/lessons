@@ -12,13 +12,22 @@ namespace Homework2
         {
             VirtualDatabase<T>.virtualDatabase.Add(data);
         }
+
+        public List<T> GetAll()
+        {
+            return new List<T>();
+        }
+
         public virtual void Read()
         {
+
         }
+
         public virtual void Update(int id)
         {
             
         }
+
         public virtual void Delete(int id)
         {
 
