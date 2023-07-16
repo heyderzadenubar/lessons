@@ -38,6 +38,15 @@ namespace WindowsFormsPart2
                 Username = "zaurramazanli",
                 Password = "zaur123456"
             });
+
+            Users.Add(new User()
+            {
+                Id = 4,
+                Name = "nnn",
+                Surname = "Ramazanli",
+                Username = "n",
+                Password = "n"
+            });
         }
     }
 }
