@@ -24,17 +24,15 @@ namespace FakeData_Aprel14
         Random rand = new Random();
         private void GeneratePersonButtonClick(object sender, EventArgs e)
         {
-            PersonsStatisticsButton.Enabled = true;
             VirtualDatabase.personsList.Clear();
-            for (int i = 0; i <100; i++)  // komp donur
+            for (int i = 0; i <1000; i++)
             {
                 Persons persons = new Persons()
                 {
                     Name = FakeData.NameData.GetFirstName(),
                     Surname = FakeData.NameData.GetSurname(),
-                    Age = rand.Next(0, 100),
                     Email = FakeData.NetworkData.GetEmail(),
-                    Country = FakeData.PlaceData.GetCountry(),
+                    Country = FakeData.PlaceData.GetCountry()
                 };
                 VirtualDatabase.personsList.Add(persons);
                 if (!Directory.Exists(GlobalSettings.COUNTRIES_PATH + persons.Country))
@@ -54,12 +52,6 @@ namespace FakeData_Aprel14
             }
             dataGridView1.DataSource = VirtualDatabase.personsList;
 
-        }
-
-        private void PersonsStatisticsButton_Click(object sender, EventArgs e)
-        {
-            PersonStatisticsForm personStatisticsForm = new PersonStatisticsForm();
-            personStatisticsForm.ShowDialog();
         }
     }
 
