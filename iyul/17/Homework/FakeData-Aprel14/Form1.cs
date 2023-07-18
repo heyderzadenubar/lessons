@@ -26,7 +26,7 @@ namespace FakeData_Aprel14
         {
             PersonsStatisticsButton.Enabled = true;
             VirtualDatabase.personsList.Clear();
-            for (int i = 0; i <100; i++)  // komp donur
+            for (int i = 0; i < 440; i++)  // komp donur
             {
                 Persons persons = new Persons()
                 {
@@ -37,20 +37,53 @@ namespace FakeData_Aprel14
                     Country = FakeData.PlaceData.GetCountry(),
                 };
                 VirtualDatabase.personsList.Add(persons);
-                if (!Directory.Exists(GlobalSettings.COUNTRIES_PATH + persons.Country))
+                if (!Directory.Exists(GlobalSettings.COUNTRIES_PATH + persons.Country + GlobalSettings.AGE_0_18_PATH) ||
+                    !Directory.Exists(GlobalSettings.COUNTRIES_PATH + persons.Country + GlobalSettings.AGE_19_35_PATH) ||
+                    !Directory.Exists(GlobalSettings.COUNTRIES_PATH + persons.Country + GlobalSettings.AGE_36_60_PATH) ||
+                    !Directory.Exists(GlobalSettings.COUNTRIES_PATH + persons.Country + GlobalSettings.AGE_60_PLUS_PATH))
                 {
-                    Directory.CreateDirectory(GlobalSettings.COUNTRIES_PATH + persons.Country);
-                    FileStream fileStream = File.Create(GlobalSettings.COUNTRIES_PATH + persons.Country + "/"
-                                        + persons.Name + "-" + persons.Surname + "-" + rand.Next(1, 100000)+".txt");
-                    fileStream.Close();
+                    if (persons.Age >= 0 && persons.Age <= 18)
+                    {
+                        Directory.CreateDirectory(GlobalSettings.COUNTRIES_PATH + persons.Country + GlobalSettings.AGE_0_18_PATH);
+                    }
+                    else if (persons.Age >= 19 && persons.Age <= 35)
+                    {
+                        Directory.CreateDirectory(GlobalSettings.COUNTRIES_PATH + persons.Country + GlobalSettings.AGE_19_35_PATH);
+                    }
+                    else if (persons.Age >= 36 && persons.Age <= 60)
+                    {
+                        Directory.CreateDirectory(GlobalSettings.COUNTRIES_PATH + persons.Country + GlobalSettings.AGE_36_60_PATH);
+                    }
+                    else if (persons.Age >= 61)
+                    {
+                        Directory.CreateDirectory(GlobalSettings.COUNTRIES_PATH + persons.Country + GlobalSettings.AGE_60_PLUS_PATH);
+                    }
                 }
-                else
+                if (persons.Age >= 0 && persons.Age <= 18)
                 {
-                    FileStream fileStream = File.Create(GlobalSettings.COUNTRIES_PATH + persons.Country + "/"
+                    FileStream fileStream = File.Create(GlobalSettings.COUNTRIES_PATH + persons.Country + GlobalSettings.AGE_0_18_PATH
                                         + persons.Name + "-" + persons.Surname + "-" + rand.Next(1, 100000) + ".txt");
                     fileStream.Close();
-                }    
-                
+                }
+                else if (persons.Age >= 19 && persons.Age <= 35)
+                {
+                    FileStream fileStream = File.Create(GlobalSettings.COUNTRIES_PATH + persons.Country + GlobalSettings.AGE_19_35_PATH
+                                        + persons.Name + "-" + persons.Surname + "-" + rand.Next(1, 100000) + ".txt");
+                    fileStream.Close();
+                }
+                else if (persons.Age >= 36 && persons.Age <= 60)
+                {
+                    FileStream fileStream = File.Create(GlobalSettings.COUNTRIES_PATH + persons.Country + GlobalSettings.AGE_36_60_PATH
+                                        + persons.Name + "-" + persons.Surname + "-" + rand.Next(1, 100000) + ".txt");
+                    fileStream.Close();
+                }
+                else if (persons.Age >= 61)
+                {
+                    FileStream fileStream = File.Create(GlobalSettings.COUNTRIES_PATH + persons.Country + GlobalSettings.AGE_60_PLUS_PATH
+                                        + persons.Name + "-" + persons.Surname + "-" + rand.Next(1, 100000) + ".txt");
+                    fileStream.Close();
+                }
+
             }
             dataGridView1.DataSource = VirtualDatabase.personsList;
 
