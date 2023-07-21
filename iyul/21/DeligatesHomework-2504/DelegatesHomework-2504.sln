@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.33529.398
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegatesHomework-2504", "DeligatesHomework-2504\DelegatesHomework-2504.csproj", "{BE178069-3B9A-4332-95D3-9768F1250332}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqHomework", "LinqHomework\LinqHomework.csproj", "{1CAD0454-EDAB-460A-A2C2-41BF3F8242DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework3", "Homework3\Homework3.csproj", "{4BA9191F-19D2-4A0C-B9E1-6D9A2B0B9B6B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{BE178069-3B9A-4332-95D3-9768F1250332}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE178069-3B9A-4332-95D3-9768F1250332}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE178069-3B9A-4332-95D3-9768F1250332}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CAD0454-EDAB-460A-A2C2-41BF3F8242DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CAD0454-EDAB-460A-A2C2-41BF3F8242DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CAD0454-EDAB-460A-A2C2-41BF3F8242DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CAD0454-EDAB-460A-A2C2-41BF3F8242DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BA9191F-19D2-4A0C-B9E1-6D9A2B0B9B6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BA9191F-19D2-4A0C-B9E1-6D9A2B0B9B6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BA9191F-19D2-4A0C-B9E1-6D9A2B0B9B6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BA9191F-19D2-4A0C-B9E1-6D9A2B0B9B6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
