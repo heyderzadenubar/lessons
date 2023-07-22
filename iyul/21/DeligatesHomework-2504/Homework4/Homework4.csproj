@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1CAD0454-EDAB-460A-A2C2-41BF3F8242DA}</ProjectGuid>
+    <ProjectGuid>{952FCD87-892F-463A-AF5D-D5750843EA0F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>LinqHomework</RootNamespace>
-    <AssemblyName>LinqHomework</AssemblyName>
+    <RootNamespace>Homework4</RootNamespace>
+    <AssemblyName>Homework4</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,9 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Car.cs" />
-    <Compile Include="Enums\Colors.cs" />
-    <Compile Include="Enums\Transmissions.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VirtualDatabase.cs" />
@@ -57,6 +55,5 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
