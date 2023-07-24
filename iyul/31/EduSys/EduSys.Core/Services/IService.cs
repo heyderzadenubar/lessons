@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EduSys.Core.Repositories
+namespace EduSys.Core.Services
 {
-    public interface IGenericRepository<T> where T : class 
+    public interface IService<T> where T : class
     {
-        Task<T>GetByIdAsync(int id);
+        Task<T> GetByIdAsync(int id);
 
-        IQueryable<T> GetAll();
+        Task<IEnumerable<T>> GetAllAsync();
 
         IQueryable<T> Where(Expression<Func<T, bool>> expression);
 
@@ -21,11 +20,10 @@ namespace EduSys.Core.Repositories
 
         Task AddRangeAsync(IEnumerable<T> entities);
 
-        void Update(T entity);
+        Task UpdateAsync(T entity);
 
-        void Remove(T entity);
-            
-        void RemoveRange(IEnumerable<T> entities);
+        Task RemoveAsync(T entity);
+
+        Task RemoveRangeAsync(IEnumerable<T> entities);
     }
-    
 }
