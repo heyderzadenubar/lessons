@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EduSys.Repository.Configurations
 {
-    public class ProductConfiguration : IEntityTypeConfiguration<Product>
+    public class ProductConfigutarion : IEntityTypeConfiguration<Product>
     {
         public void Configure(EntityTypeBuilder<Product> builder)
         {
