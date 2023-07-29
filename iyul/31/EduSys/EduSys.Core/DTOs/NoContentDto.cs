@@ -8,5 +8,6 @@ namespace EduSys.Core.DTOs
 {
     public class NoContentDto
     {
+
     }
 }
