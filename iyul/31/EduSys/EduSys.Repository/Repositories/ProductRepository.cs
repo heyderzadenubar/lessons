@@ -15,7 +15,7 @@ namespace EduSys.Repository.Repositories
         {
                 
         }
-        public async Task<List<Product>> GetProductWithCategory()
+        public async Task<List<Product>> GetProductsWithCategory()
         {
             //Eager loading
             return await _context.Products.Include(x=>x.Category).ToListAsync();

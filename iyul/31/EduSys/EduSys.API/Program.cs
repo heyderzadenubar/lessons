@@ -1,3 +1,8 @@
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using EduSys.API.Controllers.Middlewares;
+using EduSys.API.Controllers.Modules;
+using EduSys.API.Filters;
 using EduSys.Core.Repositories;
 using EduSys.Core.Services;
 using EduSys.Core.UnitOfWorks;
@@ -6,12 +11,22 @@ using EduSys.Repository.Repositories;
 using EduSys.Repository.UnitOfWorks;
 using EduSys.Service.Mapping;
 using EduSys.Service.Services;
+using EduSys.Service.Validations;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddControllers().AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<ProductDtoValidator>());
+builder.Services.AddControllers(options => options.Filters.Add(new ValidateFilterAttribute()));
+
+builder.Services.Configure<ApiBehaviorOptions>(options =>
+{ options.SuppressModelStateInvalidFilter = true;
+}) ;
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -19,15 +34,20 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped(typeof(NotFoundFilter<>));
+
+//builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+//builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
 builder.Services.AddAutoMapper(typeof(MapProfile));
 
-builder.Services.AddScoped(typeof(IProductService), typeof(ProductService));
-builder.Services.AddScoped(typeof(IProductRepository), typeof(ProductRepository));
+//builder.Services.AddScoped(typeof(IProductService), typeof(ProductService));
+//builder.Services.AddScoped(typeof(IProductRepository), typeof(ProductRepository));
 
-builder.Services.AddScoped(typeof(IService<>), typeof(Service<>));
+//builder.Services.AddScoped<ICategoryService, CategoryService>();
+//builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+
+//builder.Services.AddScoped(typeof(IService<>), typeof(Service<>));
 
 builder.Services.AddDbContext<AppDbContext>(x =>
 {
@@ -36,6 +56,9 @@ builder.Services.AddDbContext<AppDbContext>(x =>
         option.MigrationsAssembly(Assembly.GetAssembly(typeof(AppDbContext)).GetName().Name);
     });
 });
+
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder => containerBuilder.RegisterModule(new RepoServiceModule()));
 
 var app = builder.Build();
 
@@ -47,6 +70,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCustomException();   
 
 app.UseAuthorization();
 
