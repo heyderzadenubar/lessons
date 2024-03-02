@@ -162,7 +162,7 @@ namespace EduSys.Repository.Migrations
                     b.HasIndex("ProductId")
                         .IsUnique();
 
-                    b.ToTable("ProductFeatures");
+                    b.ToTable("ProductFeatures", (string)null);
 
                     b.HasData(
                         new
